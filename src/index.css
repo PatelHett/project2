@@ -33,11 +33,12 @@ body::-webkit-scrollbar-thumb
     width: 90vh;
     background-color: #84D468;
     position: absolute;
-    top: -22%;
+    top: -2%;
     right: -5%;
     transform: rotate(60deg);
     border-radius: 60px;
     z-index: -1;
+    border: 2px solid rgb(0, 81, 0);
 }
 .navbar
 {
@@ -175,8 +176,8 @@ footer
 
 
 /* login page */
-/* 
-body {
+
+/* body {
     background-image: url('https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg');
     background-color:#817474;
     background-position: center;
@@ -186,7 +187,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   form.login-form {
       height: 349px;
       width: 356px;
@@ -208,19 +209,19 @@ body {
     border-radius:28px;
     /* border : 1px solid white; */
     /* background-color:#376BF1 */
-  /* }
+   }
   form {
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    /* backdrop-filter: blur(5px); */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  input[type="text"], input[type="password"] {
+  input[type="text"], input[type="password"] ,input[type="email"]{
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
@@ -231,6 +232,7 @@ body {
     width: 100%;
     max-width: 300px;
   }
+
   input[type="submit"] {
     padding: 10px;
     margin: 10px;
@@ -242,5 +244,5 @@ body {
     cursor: pointer;
     width: 100%;
     max-width: 300px;
-  } */
+  }
    

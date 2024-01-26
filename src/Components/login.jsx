@@ -23,7 +23,7 @@ function LoginForm() {
               <figure>
                 <img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sign up image" />
               </figure>
-              <a href="#" className="signup-image-link">Create an account</a>
+              <a href="/signup" className="signup-image-link">Create an account</a>
             </div>
             <div className="signin-form">
               <h2 className="form-title">Sign In</h2>

@@ -3,19 +3,17 @@ import { useNavigate } from "react-router-dom";
 import  "../login.css";
 
 const SignUpForm = () => {
-
     const navigate = useNavigate();
-
-
 
   return (
     <div className="main">
       <section className="signup">
+      {/* <div id="green_el"></div> */}
         <div className="container">
           <div className="signup-content">
             <div className="signup-form">
-              <h2 className="form-title">Sign up</h2>
               <form method="POST" className="register-form" id="register-form">
+              <h2 className="form-title">Sign up</h2>
                 <div className="form-group">
                   <label htmlFor="name"><i className="zmdi zmdi-account material-icons-name"></i></label>
                   <input type="text" name="name" id="name" placeholder="Your Name" />
@@ -45,9 +43,9 @@ const SignUpForm = () => {
             </div>
             <div className="signup-image">
               <figure>
-                <img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signup-image.jpg" alt="sign up image" />
+                <img src="./imgs/signup.jpg" alt="sign up image" />
               </figure>
-              <a href="#" className="signup-image-link">I am already a member</a>
+              <a href="login" className="signup-image-link">I am already a member</a>
             </div>
           </div>
         </div>

@@ -11,14 +11,23 @@ import Footer from "./Components/footer";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
 
+
+const Layout = ({ children }) => (
+  <div>
+    <Section1 />
+    <Section2 />
+    {children}
+    <Footer />
+  </div>
+);
+
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Section1 />} />
-          <Route path="/" element={<Section2 />} />
-          <Route path="/" element={<Footer />} />
+          <Route path="/" element={<Layout />} />
+
           {/* <Route path="/" element={<Footer />} /> */}
         </Routes>
         <Routes>

@@ -1,21 +1,8 @@
 import React from "react";
+import "../MyCarousel.css"; // Import the CSS file without assigning it to a variable
 
-function Section2() {
+export default function Section2() {
   return (
-<<<<<<< Updated upstream
-    <section id="Recently_added">
-      <Items />
-    </section>
-  );
-}
-
-function Items() {
-  return (
-    <div className="items">
-      <div className="item_card">Item 1</div>
-      <div className="item_card">Item 2</div>
-      <div className="item_card">Item 3</div>
-=======
     <div className="S2container">
       <div className="S2box">
         <a href="#">
@@ -64,9 +51,6 @@ function Items() {
           <p>Date: 23-06-2024</p>
         </div>
       </div>
->>>>>>> Stashed changes
     </div>
   );
 }
-
-export default Section2;

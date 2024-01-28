@@ -19,6 +19,10 @@ body::-webkit-scrollbar-thumb
     border-radius: 20px;
     background:linear-gradient(18deg,greenyellow,#84D468,#376BF1);
 }
+
+
+
+  
 #landing_page
 {
     position: relative;

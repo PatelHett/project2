@@ -1,0 +1,38 @@
+/* For small screens */
+.S2container {
+  width: 100%;
+  height: auto; /* Change to auto for responsive height */
+  display: flex;
+  flex-direction: column; /* Change to column for smaller screens */
+  align-items: center; /* Center the boxes horizontally */
+  background-color: transparent;
+}
+
+.S2box {
+  width: 40% !important; /* Adjust width to fit smaller screens */
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  
+}
+
+.S2image {
+  width: 100%; /* Make images fill the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure images don't exceed their natural size */
+}
+
+/* For larger screens */
+@media screen and (min-width: 768px) {
+  .S2container {
+    flex-direction: row;
+    align-items: stretch; /* Stretch the boxes vertically */
+    justify-content: center; /* Center the boxes horizontally */
+  }
+
+  .S2box {
+    width: calc(33.33% - 20px); /* Adjust width for larger screens */
+    max-width: 300px; /* Limit maximum width */
+  }
+}

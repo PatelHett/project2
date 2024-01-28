@@ -39,6 +39,8 @@ body::-webkit-scrollbar-thumb
     border-radius: 60px;
     z-index: -1;
     border: 2px solid rgb(0, 81, 0);
+    /* box shadow */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .navbar
 {
@@ -119,7 +121,8 @@ body::-webkit-scrollbar-thumb
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 3px 6px  black;
+    /* box-shadow: 0px 3px 6px  black; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: .2s linear;
 }
 #login
@@ -140,38 +143,14 @@ body::-webkit-scrollbar-thumb
     background: #376BF1;
     border: 2px solid rgb(246, 246, 246);
 }
-
-#Recently_added
-{
-    height: 70vh;
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapercave.com%2Fwp%2FgEo9XDp.jpg&f=1&nofb=1&ipt=ec55a90a1bd1a70792bcd87d76c7a5f3a5481af03418cf6621a03ba4d268e2a3&ipo=images');
-    image-rendering: optimizeSpeed;
-}
-#Recently_added .items
-{
-    position: relative;
-    top: 50%;
-    transform: translate(0,-50%);    
-    height: 400px;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.604);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#Recently_added .items .item_card
-{
-    height: 300px;
-    width: 400px;
-    background-color: rgba(127, 255, 212, 0.79);
-    margin: 12px;
-    border-radius: 20px;
-}
 footer
 {
     position: relative;
     height: 30vh;
-    background-color: #376cf1c3;
+    background-color: #cad6f4;
+    margin:.6%;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 
@@ -231,6 +210,8 @@ footer
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 300px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    
   }
 
   input[type="submit"] {
@@ -244,5 +225,6 @@ footer
     cursor: pointer;
     width: 100%;
     max-width: 300px;
-  }
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
    

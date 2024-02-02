@@ -110,7 +110,7 @@ export default function Section2() {
               </a>
               <div className="details">
                 <h2>Name : {item.name}</h2>
-                <p>Location : {item.location}</p>
+                <p className="location">Location : {item.location}</p>
                 <p>
                   Date : {new Date(item.userSelectedDate).toLocaleDateString()}
                 </p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -13,47 +13,113 @@ function Login() {
 
 function LoginForm() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState();
+  const [password, setPass] = useState();
+  const [error, setErr] = useState();
+
+  const postData = async () => {
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await fetch("http://localhost:4000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response) {
+        throw new Error("Response is undefined or null");
+      }
+
+      const responseData = await response.json();
+      console.log(responseData);
+
+      // Check if there is a redirectUrl in the response data
+      if (responseData.err) {
+        setErr(<h4 className="error">{responseData.err}</h4>);
+      } else {
+        navigate("/allitems");
+      }
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    console.log(email + "  " + password);
+    if (!email || !password ) {
+      setErr(<h4 className="error_re">⚠️All fields are required.</h4>);
+      return;
+    }
+    postData();
+    navigate("/");
+  };
 
   return (
     <div className="main">
-        <section className="sign-in">
+      <section className="signup">
+        <div id="green_el"></div>
         <div className="container">
-          <div className="signin-content">
-            <div className="signin-image">
+          <div className="signup-content">
+            <div className="login-image">
               <figure>
-                <img src="https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg" alt="sign up image" />
+                <img
+                  src="./imgs/login_vector.png"
+                  alt="login image"
+                  id="login-img"
+                />
               </figure>
-              <a href="/signup" className="signup-image-link">Create an account</a>
             </div>
-            <div className="signin-form">
-              <h2 className="form-title">Sign In</h2>
+            <div className="signup-form">
               <form method="POST" className="register-form" id="login-form">
+                <h2 className="form-title">Login</h2>
+
                 <div className="form-group">
-                  <label htmlFor="your_name"><i className="zmdi zmdi-account material-icons-name"></i></label>
-                  <input type="text" name="your_name" id="your_name" placeholder="Your Name" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="your_pass"><i className="zmdi zmdi-lock"></i></label>
-                  <input type="password" name="your_pass" id="your_pass" placeholder="Password" />
-                </div>
-                <div className="form-group">
-                  <input type="checkbox" name="remember-me" id="remember-me" className="agree-term" />
-                  <label htmlFor="remember-me" className="label-agree-term">
-                    <span><span></span></span>Remember me
+                  <label htmlFor="email">
+                    <i className="zmdi zmdi-email"></i>
                   </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
+                <div className="form-group">
+                  <label htmlFor="pass">
+                    <i className="zmdi zmdi-lock"></i>
+                  </label>
+                  <input
+                    type="password"
+                    name="pass"
+                    id="pass"
+                    placeholder="Password"
+                    onChange={(e) => setPass(e.target.value)}
+                  />
+                </div>
+                {error}
+                <a href="signup" className="signup-image-link">
+                  don't have account
+                </a>
                 <div className="form-group form-button">
-                  <input type="submit" name="signin" id="signin" className="form-submit" value="Log in" />
+                  <input
+                    type="submit"
+                    name="signin"
+                    id="signin"
+                    className="form-submit"
+                    value="Login"
+                    onClick={handleLogin}
+                  />
                 </div>
               </form>
-              <div className="social-login">
-                <span className="social-label">Or login with</span>
-                <ul className="socials">
-                  <li><a href="#"><i className="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                  <li><a href="#"><i className="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                  <li><a href="#"><i className="display-flex-center zmdi zmdi-google"></i></a></li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>

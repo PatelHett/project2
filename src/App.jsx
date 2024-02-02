@@ -25,16 +25,16 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />} />
+         <Routes>
+           <Route path="/" element={<Layout />} />
 
-          {/* <Route path="/" element={<Footer />} /> */}
+          <Route path="/" element={<Footer />} /> 
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
         </Routes>
         <Routes>
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} /> 
         </Routes>
       </BrowserRouter>
     </>

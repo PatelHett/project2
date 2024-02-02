@@ -15,14 +15,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   /* background:url("https://cdn.wallpapersafari.com/5/21/0pGDmT.jpg"); */
   /* border-image: fill 0 linear-gradient(rgba(232, 228, 228, 0.2),#000); */
 }
 
 .S2box {
-  max-width: 18%; 
-  min-width: 12%; 
+  /* max-width: 18%;  */
+  /* min-width: 12%;  */
   height: fit-content;
   /* background: yellow; */
   margin: 2%;
@@ -58,6 +59,18 @@
 }
 .location{
   margin: 0;
+}
+@media only screen and (max-width: 600px) {
+  .S2box {
+    min-width: 12%;
+  }
+}
+
+/* Desktop styles (max-width: 18%) */
+@media only screen and (min-width: 600px) {
+  .S2box {
+    max-width: 18%;
+  }
 }
 
 /* For larger screens */

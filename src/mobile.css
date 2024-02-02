@@ -1,0 +1,54 @@
+@media only screen and (max-width: 600px) {
+
+    /* Styles specific to mobile devices */
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    #sec1_vector_img {
+        display: none;
+    }
+
+    /* .navbar{
+        display: flex;
+        flex-direction: column;
+    }*/
+    .navbar img {
+        min-width: 26%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    nav {
+        /* position: absolute; */
+        justify-content: center;
+    }
+
+    .landing_content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .content{
+        margin-top: 10vh;
+      }
+
+      .content h4 {
+        font-size: 1.2vh;
+      }
+    
+      .content h2 {
+        font-size: 2%;
+      }
+    
+      .content p {
+        font-size: 1em;
+      }
+
+    /* Add more styles as needed for mobile devices */
+}

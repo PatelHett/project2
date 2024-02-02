@@ -11,7 +11,6 @@ import Footer from "./Components/footer";
 import Login from "./Components/login";
 import Signup from "./Components/signup";
 
-
 const Layout = ({ children }) => (
   <div>
     <Section1 />
@@ -25,16 +24,14 @@ function App() {
   return (
     <>
       <BrowserRouter>
-         <Routes>
-           <Route path="/" element={<Layout />} />
-
-          <Route path="/" element={<Footer />} /> 
+        <Routes>
+          <Route path="/" element={<Layout />} />
         </Routes>
         <Routes>
           <Route path="/login" element={<Login />} />
         </Routes>
         <Routes>
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </>

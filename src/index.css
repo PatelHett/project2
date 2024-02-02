@@ -86,7 +86,7 @@ body::-webkit-scrollbar-thumb
     top: 50%;
     display: flex;
     flex-wrap: wrap;
-    padding: 2.6vh;
+    padding: 2vh 1vh ;
     justify-content: center;
     flex-direction:column;
     /* background-color: blue; */
@@ -150,7 +150,7 @@ body::-webkit-scrollbar-thumb
 footer
 {
     position: relative;
-    height: 30vh;
+    height: fit-content;
     background-color: #cad6f4;
     margin:.6%;
     padding:3%;

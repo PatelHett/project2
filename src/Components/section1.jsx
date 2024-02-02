@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../mobile.css";
 
 function Section1() {
   return (
     <div>
       <section id="landing_page">
-        <div id="green_el" ></div>
+        <div id="green_el"></div>
         <Navbar />
         <LandingContent />
       </section>
@@ -75,10 +76,10 @@ function Navbar() {
 
 function LandingContent() {
   const navigate = useNavigate();
-  const [data, setData] = useState('dev');
+  const [data, setData] = useState("dev");
 
   useEffect(() => {
-    fetch('http://localhost:4000/apide')
+    fetch("http://localhost:4000/apide")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -92,7 +93,7 @@ function LandingContent() {
       .catch((error) => {
         console.error("Fetching error", error);
       });
-  },[]); // Empty dependency array ensures that the effect runs once when the component mounts
+  }, []); // Empty dependency array ensures that the effect runs once when the component mounts
 
   const handleLoginClick = () => {
     navigate("/login");
@@ -102,7 +103,7 @@ function LandingContent() {
     navigate("/signup");
   };
 
-    return (
+  return (
     <div className="landing_content">
       <div className="content">
         <h4>Find Your</h4>
@@ -117,20 +118,19 @@ function LandingContent() {
           registration of lost items. Join our growing community today and be
           part of the heartwarming stories as we reunite people with their
           cherished belongings.
+          <div className="btns">
+            <button onClick={handleLoginClick} id="login">
+              Login
+            </button>
+            <button onClick={handleSignupClick} id="signup">
+              Sign Up
+            </button>
+          </div>
         </p>
-        <div className="btns">
-          <button onClick={handleLoginClick} id="login">
-            Login
-          </button>
-          <button onClick={handleSignupClick} id="signup">
-            Sign Up
-          </button>
-        </div>
       </div>
-      <img src="imgs/vector_img.png" alt=""></img>
+      <img src="imgs/vector_img.png" alt="" id="sec1_vector_img"></img>
     </div>
   );
 }
-
 
 export default Section1;

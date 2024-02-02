@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-secondary text-center p-3">
+      <div className="bg-secondary text-center p-2">
         <p className="m-0 text-white">
           &copy; 2024 Lost&amp;Found. All rights reserved.
         </p>

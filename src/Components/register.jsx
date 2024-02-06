@@ -35,7 +35,7 @@ const RegisterForm = () => {
       formDataToSend.append("location", formData.location);
       formDataToSend.append("date", formData.date);
 
-      const response = await axios.post("/register", formDataToSend);
+      const response = await axios.post("http://127.0.0.1:4000/register", formDataToSend);
       console.log(response.data);
       // Redirect or show success message
     } catch (error) {

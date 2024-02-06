@@ -8,6 +8,8 @@ import Login from "./Components/login";
 import Signup from "./Components/signup";
 import Addlist from "./Components/Addlist";
 import Register from "./Components/register";
+import ContactForm from "./Components/contact";
+
 
 const Layout = ({ children }) => (
   <div>
@@ -37,7 +39,9 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
         </Routes>
-       
+        <Routes>
+          <Route path="/contact" element={<ContactForm />} />
+        </Routes>
       </BrowserRouter>
     </>
   );

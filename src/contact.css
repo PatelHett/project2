@@ -1,0 +1,60 @@
+.contact-form{
+    background-color: rgba(175, 88, 88, 0.2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+  
+ 
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  textarea{
+    width: 30vh;
+    background-color: #fff;
+  }
+
+  
+  #contact_submit {
+    background-color: #007bff; /* Button background color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  #contact_submit:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+
+  .img-form{
+    background-color: #077af586;
+    overflow-y: hidden;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  #register_submit{
+    background-color: #59ff00; /* Button background color */
+    color:black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  #register_submit:hover {
+    background-color: #44c002; /* Button background color on hover */
+  }
+  .i1{
+    z-index: -1;
+  }

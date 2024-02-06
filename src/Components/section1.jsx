@@ -22,8 +22,8 @@ function Navbar() {
       <img src="/imgs/logo.jpg" alt="Logo" />
       <nav id="menu">
           <menu onClick={()=>{Navigate('/lost-items')}}>Lost-Items</menu>
-        <menu onClick={()=>{Navigate('/nothing')}}>Contact</menu>
-        <menu>About</menu>
+        <menu onClick={()=>{Navigate('/contact')}}>Contact</menu>
+        <menu onClick={()=>{Navigate('/abour-us')}}>About</menu>
         <menu onClick={()=>{window.scrollBy(0, 1000)}}>Recent</menu>
       </nav>
     </div>

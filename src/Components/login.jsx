@@ -38,13 +38,13 @@ function LoginForm() {
 
       const responseData = await response.json();
       console.log(responseData);
-
-      // Check if there is a redirectUrl in the response data
-      if (responseData.err) {
-        setErr(<h4 className="error">{responseData.err}</h4>);
-      } else {
-        navigate("/allitems");
+      if (responseData.redirectUrl) {
+        window.location.href = responseData.redirectUrl;
       }
+      // Check if there is a redirectUrl in the response data
+      else if (responseData.err) {
+        setErr(<h4 className="error">{responseData.err}</h4>);
+      } 
     } catch (error) {
       console.error("Error posting data:", error);
     }

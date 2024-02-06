@@ -7,6 +7,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [pass, setPass] = useState("");
   const [terms, setTerms] = useState(false);
   const [error,setErr] = useState('')
 
@@ -55,11 +56,11 @@ const SignUpForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { 
     e.preventDefault();
 
     console.log(email + " | " + name + " | " + password + " | " + terms);
-    if (!name || !email || !password || !terms) {
+    if (!name || !email || !password || !terms || !pass) {
       setErr(<h4 className="error_re">⚠️All fields are required.</h4>);
       return;
     }
@@ -110,6 +111,8 @@ const SignUpForm = () => {
                     id="pass"
                     required
                     placeholder="Password"
+                    onChange={(e) => setPass(e.target.value)}
+
                   />
                 </div>
                 <div className="form-group">

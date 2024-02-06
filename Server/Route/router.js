@@ -69,11 +69,11 @@ router.post('/login', async (req,res) =>{
     .then((user) => {
       if (user) {
         console.log('User found');
-        (password == user.password)?res.send({redirectUrl:'/allitems'}):res.send({err:'id or pass incorrect'})
+        (password == user.password)?res.send({redirectUrl:'/lost-items'}):res.send({err:'id or pass incorrect'})
         
       } else {
+          res.send({err:'User not found'})
         console.log('User not found');
-        res.send({err:'User not found'})
       }
     })
     .catch((err) => {

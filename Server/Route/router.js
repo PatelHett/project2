@@ -9,16 +9,28 @@ router.get('/apide', (req, res) => {
 })
 
 router.get('/recent', async(req, res) => {
-    const itemdata = await itemModel.find({}).limit(4).exec()
-    // const itemdata = await itemModel.find({}).sort({ _id: -1 }).limit(3).exec()
+    const itemdata = await itemModel.find({}).sort({ _id: -1 }).limit(4).exec()
     if(itemdata){
-        console.log(JSON.stringify(itemdata))
+        // console.log(JSON.stringify(itemdata))
         res.send(JSON.stringify(itemdata))
     }
     else{
         console.log('error in fetching data items.')
     }
 })
+
+router.get('/lostitem', async(req,res)=>{
+    const itemdata = await itemModel.find({}).exec()
+    // const itemdata = await itemModel.find({}).sort({ _id: -1 }).limit(3).exec()
+    if(itemdata){
+        // console.log(JSON.stringify(itemdata))
+        res.send(JSON.stringify(itemdata))
+    }
+    else{
+        console.log('error in fetching data items.')
+    }
+})
+
 
 router.post('/registerdata', async (req, res) => {
     var data = { d: 'Done', redirectUrl: '/login' };
@@ -69,11 +81,6 @@ router.post('/login', async (req,res) =>{
     });
 
 })
-
-router.get('/allitems', (req,res)=>{
-    res.send('Coming Soon 😎')
-})
-
 
 
 module.exports = router

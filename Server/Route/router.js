@@ -17,7 +17,7 @@ router.get('/recent', async(req, res) => {
     else{
         console.log('error in fetching data items.')
     }
-})
+}) 
 
 router.get('/lostitem', async(req,res)=>{
     const itemdata = await itemModel.find({}).exec()

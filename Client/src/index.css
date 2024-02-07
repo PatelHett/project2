@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #DADFE8;
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+body::-webkit-scrollbar-thumb {
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    background: linear-gradient(18deg, greenyellow, #5ac534, #0048fd);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#landing_page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#green_el {
+    height: 100vh;
+    width: 90vh;
+    background-color: #84D468;
+    position: absolute;
+    top: -2%;
+    right: -5%;
+    transform: rotate(60deg);
+    border-radius: 60px;
+    z-index: -1;
+    border: 2px solid rgb(0, 81, 0);
+    border: 5px inset #84D468;
+    overflow-x: hidden;
+    /* box shadow */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: blue; */
+}
+
+.navbar img {
+    /* background-color: aqua; */
+    width: 9%;
+}
+
+.navbar #menu {
+    /* background-color: greenyellow; */
+    display: flex;
+    align-items: center;
+}
+
+.navbar #menu menu,
+.link {
+    margin: 0 8%;
+    min-width: fit-content;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .1s linear;
+}
+
+.navbar #menu menu:hover {
+    transform: translateY(-10px);
+}
+
+.landing_content {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: aquamarine; */
+}
+
+.landing_content .content {
+    position: relative;
+    top: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vh 1vh;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: blue; */
+    width: 40%;
+}
+
+.landing_content .content h4 {
+    font-weight: 300;
+    font-size: 5vh;
+    line-height: 1vh;
+}
+
+.landing_content .content h2 {
+    font-weight: 500;
+    font-size: 10vh;
+    text-shadow: 1px 4px 2px rgb(50, 44, 44);
+    margin-bottom: 5%;
+}
+
+.landing_content .content .btns {
+    position: relative;
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+    /* background-color: aquamarine; */
+}
+
+.landing_content .content .btns #login,
+#signup {
+    height: 5vh;
+    width: 14vh;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4vh;
+    margin: 0 4%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0px 3px 6px  black; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: .2s linear;
+}
+
+#login {
+    color: aliceblue;
+    background: #376BF1;
+    border: 2px solid rgb(246, 246, 246);
+}
+
+#login:hover {
+    color: black;
+    background: #fefeff;
+    border: 2px solid #376BF1;
+}
+
+#signup:hover {
+    color: aliceblue;
+    background: #376BF1;
+    border: 2px solid rgb(246, 246, 246);
+}
+
+footer {
+    position: relative;
+    height: fit-content;
+    background-color: #cad6f4;
+    margin: .6%;
+    padding: 3%;
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+/* login page */
+
+/* body {
+    background-image: url('https://img.freepik.com/free-photo/abstract-uv-ultraviolet-light-composition_23-2149243965.jpg');
+    background-color:#817474;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+form.login-form {
+    height: 349px;
+    width: 356px;
+}
+
+h1 {
+    position: absolute;
+    top: -5px;
+    font-size: 50px;
+}
+
+.btn button {
+    height: 35px;
+    width: 100px;
+    margin-top: 15px;
+
+}
+
+button {
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 28px;
+    /* border : 1px solid white; */
+    /* background-color:#376BF1 */
+}
+
+form {
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    width: fit-content;
+    /* backdrop-filter: blur(5px); */
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    ;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* width: 100%; */
+    width: 250px;
+    /* max-width: 300px; */
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+}
+
+input[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+input[type='date'] {
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* width: 100%; */
+    width: 250px;
+    /* max-width: 300px; */
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+#search,
+.search2 {
+    border-radius: 19px;
+    font-weight: 600;
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+.search1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search2:hover {
+    background-color: #376BF1;
+    color: white;
+}
+
+
+.img-form {
+    display: flex;
+}

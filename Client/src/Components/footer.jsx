@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex-column mb-4 pl-100">
           <h2 className="logo text-white d-flex align-items-center justify-content-center mb-4">
             <img
-              src="../../public/imgs/logo.jpg"
+              src="/imgs/logo.jpg"
               alt="logo"
               className="img-fluid"
               style={{ width: "110px", height: "110px" }}

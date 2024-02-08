@@ -61,6 +61,7 @@ function LoginForm() {
     postData();
     navigate("/");
   };
+  const Navigate = useNavigate();
 
   return (
     <div className="main">

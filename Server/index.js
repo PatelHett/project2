@@ -8,10 +8,14 @@ const app = express();
 
 // Enable CORS
 const corsOptions = {
-    origin: 'https://lost-found-kappa.vercel.app/', // Replace with your frontend URL
+    origin: 'https://lost-found-kappa.vercel.app',
     credentials: true,
     optionSuccessStatus: 200,
-}
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+};
+
 
 app.use(cors(corsOptions));
 

@@ -28,7 +28,7 @@ const SignUpForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:4000/registerdata", {
+      const response = await fetch("https://lost-found-serve.vercel.app/registerdata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

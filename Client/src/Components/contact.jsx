@@ -18,7 +18,7 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       // Send form data to your backend for processing
-      const response = await axios.post("/contact", formData);
+      const response = await axios.post("https://lost-found-serve.vercel.app/contact", formData);
       console.log(response.data);
       // Show success message or redirect
     } catch (error) {

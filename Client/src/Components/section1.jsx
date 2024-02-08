@@ -67,10 +67,10 @@ function LandingContent() {
           part of the heartwarming stories as we reunite people with their
           cherished belongings.
           <div className="btns">
-            <button onClick={()=>{Navigate('/lost-items')}} id="login">
+            <button onClick={()=>{Navigate('/login')}} id="login">
               Login
             </button>
-            <button onClick={()=>{Navigate('/login')}} id="signup">
+            <button onClick={()=>{Navigate('/signup')}} id="signup">
               Sign Up
             </button>
           </div>

@@ -10,8 +10,9 @@ router.get('/apide', (req, res) => {
 
 router.get('/recent', async(req, res) => {
     const itemdata = await itemModel.find({}).sort({ _id: -1 }).limit(4).exec()
+
     if(itemdata){
-        // console.log(JSON.stringify(itemdata))
+        console.log(JSON.stringify(itemdata))
         res.send(JSON.stringify(itemdata))
     }
     else{

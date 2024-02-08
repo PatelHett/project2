@@ -37,13 +37,13 @@ const Footer = () => {
           <h2>Quick Links</h2>
           <ul className="list-unstyled">
             <li>
-              <a href="/">Home</a>
+            <Link to="/">Home</Link>
             </li>
             <li>
-              <a onClick={()=>{Navigate('/lost-items')}}>Lost Items</a>
+            <Link to="/lost-items">Lost Items</Link>
             </li>
             <li>
-              <a onClick={()=>{Navigate('/contact')}}>Contacts of team members</a>
+              <Link to="/contact">Contacts of team members</Link>
             </li>
           </ul>
         </div>

@@ -31,7 +31,8 @@ function Navbar() {
 }
 
 function LandingContent() {
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
+
   // const [data, setData] = useState("dev");
 
   // useEffect(() => {
@@ -50,16 +51,7 @@ function LandingContent() {
   //       console.error("Fetching error", error);
   //     });
   // }, []); // Empty dependency array ensures that the effect runs once when the component mounts
-
-  const handleLoginClick = () => {
-    navigate("/login");
-  };
-
-  const handleSignupClick = () => {
-    navigate("/signup");
-  };
-
-  return (
+ return (
     <div className="landing_content">
       <div className="content">
         <h4>Find Your</h4>
@@ -75,10 +67,10 @@ function LandingContent() {
           part of the heartwarming stories as we reunite people with their
           cherished belongings.
           <div className="btns">
-            <button onClick={handleLoginClick} id="login">
+            <button onClick={()=>{Navigate('/lost-items')}} id="login">
               Login
             </button>
-            <button onClick={handleSignupClick} id="signup">
+            <button onClick={()=>{Navigate('/login')}} id="signup">
               Sign Up
             </button>
           </div>

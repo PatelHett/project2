@@ -165,7 +165,7 @@ const SignUpForm = () => {
               <figure>
                 <img src="./imgs/signup.jpg" alt="sign up image" />
               </figure>
-              <a href="login" className="signup-image-link">
+              <a onClick={()=>{Navigate('/login')}} className="signup-image-link">
                 I am already a member
               </a>
             </div>

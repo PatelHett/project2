@@ -106,7 +106,7 @@ function LoginForm() {
                   />
                 </div>
                 {error}
-                <a href="signup" className="signup-image-link">
+                <a onClick={()=>{Navigate('/signup')}} className="signup-image-link">
                   don't have account
                 </a>
                 <div className="form-group form-button">

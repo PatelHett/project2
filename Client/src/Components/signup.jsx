@@ -21,6 +21,7 @@ const SignUpForm = () => {
   //   await post('http://localhost:4000/registerdata',data).then(res => console.log(res.data))
   // }
   const postData = async () => {
+
     const data = {
       name: name,
       email: email,
@@ -66,6 +67,8 @@ const SignUpForm = () => {
     }
     postData();
   };
+  const Navigate = useNavigate();
+
   return (
     <div className="main">
       <section className="signup">

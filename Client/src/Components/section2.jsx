@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../MyCarousel.css"; // Import the CSS file without assigning it to a variable
 
 export default function Section2() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState({});
 
   useEffect(() => {
     fetch("https://lost-found-serve.vercel.app/recent")
@@ -15,11 +15,7 @@ export default function Section2() {
       .then((result) => {
         console.log("Fetched data:", result);
 
-        // Ensure result is an array before setting state
-        if (!Array.isArray(result)) {
-          result = [result]; // Convert to an array if not already
-        }
-        console.log("Items after processing:", result);
+        // Set the entire result object as the state
         setItems(result);
       })
       .catch((error) => {
@@ -32,24 +28,20 @@ export default function Section2() {
       <div className="section2">
         <h2>Recently Registered Items:</h2>
         <div className="S2container">
-          {/* Conditionally render if items is an array */}
-          {Array.isArray(items) &&
-            items.map((item, index) => (
-              <div key={index} className="S2box">
-                <a href="/lostitems">
-                  <div className="S2image">
-                    <img src={item.uploadedImage} alt={`Image ${index + 1}`} />
-                  </div>
-                </a>
-                <div className="details">
-                  <h2>Name : {item.name}</h2>
-                  <p className="location">Location : {item.location}</p>
-                  <p>
-                    Date : {new Date(item.userSelectedDate).toLocaleDateString()}
-                  </p>
+          {Object.entries(items).map(([key, value], index) => (
+            <div key={index} className="S2box">
+              <a href="/lostitems">
+                <div className="S2image">
+                  <img src={value.uploadedImage} alt={`Image ${index + 1}`} />
                 </div>
+              </a>
+              <div className="details">
+                <h2>Name : {value.name}</h2>
+                <p className="location">Location : {value.location}</p>
+                <p>Date : {new Date(value.userSelectedDate).toLocaleDateString()}</p>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </>

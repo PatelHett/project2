@@ -1,7 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const Navigate = useNavigate();
+
   return (
     <footer className="text-dark">
       <div className="container1 d-flex flex-wrap justify-content-between align-items-start">
@@ -37,10 +40,10 @@ const Footer = () => {
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/lost-items">Lost Items</a>
+              <a onClick={()=>{Navigate('/lost-items')}}>Lost Items</a>
             </li>
             <li>
-              <a href="/contact">Contacts of team members</a>
+              <a onClick={()=>{Navigate('/contact')}}>Contacts of team members</a>
             </li>
           </ul>
         </div>

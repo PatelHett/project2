@@ -5,14 +5,13 @@ const itemModel = require('../DB/itemDB')
 const { useFormAction } = require('react-router-dom')
 router.get('/apide', (req, res) => {
     const data = { d: "Hello Dev maurya" }
-    res.send(data)
+    res.json(data)
 })
 
 router.get('/recent', async(req, res) => {
     const itemdata = await itemModel.find({}).sort({ _id: -1 }).limit(4).exec()
 
     if(itemdata){
-        console.log(JSON.stringify(itemdata))
         res.send(JSON.stringify(itemdata))
     }
     else{

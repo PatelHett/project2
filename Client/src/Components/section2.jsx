@@ -19,7 +19,7 @@ export default function Section2() {
         if (!Array.isArray(result)) {
           result = [result]; // Convert to an array if not already
         }
-
+        console.log("Items after processing:", result);
         setItems(result);
       })
       .catch((error) => {

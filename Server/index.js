@@ -8,7 +8,7 @@ const app = express();
 
 // Enable CORS
 const corsOptions = {
-    origin: ['http://localhost:5173', 'https://lost-found-serve.vercel.app'],
+    origin: ['http://localhost:5173', 'https://lost-found-serve.vercel.app','https://lost-found-kappa.vercel.app'],
     credentials: true,
     optionSuccessStatus: 200,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

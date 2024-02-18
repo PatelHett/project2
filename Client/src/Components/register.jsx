@@ -22,67 +22,28 @@ const RegisterForm = () => {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const formDataToSend = new FormData();
-  //     formDataToSend.append("username", formData.username);
-  //     formDataToSend.append("contact", formData.contact);
-  //     formDataToSend.append("image", formData.image);
-  //     formDataToSend.append("objectName", formData.objectName);
-  //     formDataToSend.append("location", formData.location);
-  //     formDataToSend.append("date", formData.date);
-
-  //     console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
-
-  //     const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend,);
-  //     console.log(response.data);
-  //     // Redirect or show success message
-  //   } catch (error) {
-  //     setError(error.response.data);
-  //     console.error(error.response.data);
-  //     // Show error message
-  //   }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-        const formDataToSend = new FormData();
-        formDataToSend.append("username", formData.username);
-        formDataToSend.append("contact", formData.contact);
-        formDataToSend.append("image", formData.image);
-        formDataToSend.append("objectName", formData.objectName);
-        formDataToSend.append("location", formData.location);
-        formDataToSend.append("date", formData.date);
+      const formDataToSend = new FormData();
+      formDataToSend.append("username", formData.username);
+      formDataToSend.append("contact", formData.contact);
+      formDataToSend.append("image", formData.image);
+      formDataToSend.append("objectName", formData.objectName);
+      formDataToSend.append("location", formData.location);
+      formDataToSend.append("date", formData.date);
 
-        // Convert FormData to URLSearchParams
-        const params = new URLSearchParams(formDataToSend);
+      console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
 
-        // Make the POST request using fetch
-        const response = await fetch("https://lost-found-serve.vercel.app/upload", {
-            method: "POST",
-            body: params,
-            credentials: "include", // Include credentials (cookies) in the request
-        });
-
-        // Check if the request was successful (status code in the range 200-299)
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            // Redirect or show success message
-        } else {
-            const errorData = await response.json();
-            setError(errorData);
-            console.error(errorData);
-            // Show error message
-        }
+      const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend);
+      console.log(response.data);
+      // Redirect or show success message
     } catch (error) {
-        setError(error.message);
-        console.error(error.message);
-        // Show error message
+      setError(error.response.data);
+      console.error(error.response.data);
+      // Show error message
     }
-};
+  };
 
   return (
     <>

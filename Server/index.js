@@ -7,16 +7,16 @@ const router = require('./Route/router');
 const app = express();
 
 // Enable CORS
-const corsOptions = {
-    origin: ['http://localhost:5173', 'https://lost-found-serve.vercel.app','https://lost-found-kappa.vercel.app'],
-    credentials: true,
-    optionSuccessStatus: 200,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//     origin: ['http://localhost:5173','https://lost-found-kappa.vercel.app'],
+//     credentials: true,
+//     optionSuccessStatus: 200,
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     preflightContinue: false,
+//     optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Body parser middleware
 app.use(bodyParser.json());

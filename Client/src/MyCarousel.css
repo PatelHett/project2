@@ -18,7 +18,7 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  background-color: aqua;
+  /* background-color: aqua; */
   /* background:url("https://cdn.wallpapersafari.com/5/21/0pGDmT.jpg"); */
   /* border-image: fill 0 linear-gradient(rgba(232, 228, 228, 0.2),#000); */
 }
@@ -27,7 +27,7 @@
   /* max-width: 18%;  */
   min-width:80%;
   height: fit-content;
-  background: yellow;
+  /* background: yellow; */
   margin: 2%;
   border-radius: 20px;
 }

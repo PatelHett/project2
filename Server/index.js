@@ -8,19 +8,13 @@ const app = express();
 
 // Enable CORS
 const corsOptions = {
-    origin: function (origin, callback) {
-        // Check if the origin is allowed, or set to a whitelist of allowed origins
-        const allowedOrigins = ['https://lost-found-kappa.vercel.app'];
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
+    origin: 'https://lost-found-kappa.vercel.app',
     credentials: true,
-    // other options...
+    optionSuccessStatus: 200,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
 };
-
 
 app.use(cors(corsOptions));
 
@@ -34,7 +28,7 @@ app.use(
         secret: 'lost and found', // Change this to a secure key
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false }, // Change to true in production for HTTPS
+        cookie: { secure: true }, // Change to true in production for HTTPS
     })
 );
 

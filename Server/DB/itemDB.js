@@ -15,13 +15,18 @@ const itemSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  objectName: {
+    type: String,
+    required: true,
+  },
   uploadedImage: {
     type: String,
     required: true,
   },
-  contactDetails: {
+  contact: {
     type: String,
     required: true,
+    unique: true,
   },
   handedOver: {
     type: Boolean,

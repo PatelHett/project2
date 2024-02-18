@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
     username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
+    contact: "",
     image: null,
     objectName: "",
     location: "",
@@ -27,15 +25,15 @@ const RegisterForm = () => {
     try {
       const formDataToSend = new FormData();
       formDataToSend.append("username", formData.username);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("password", formData.password);
-      formDataToSend.append("confirmPassword", formData.confirmPassword);
+      formDataToSend.append("contact", formData.contact);
       formDataToSend.append("image", formData.image);
       formDataToSend.append("objectName", formData.objectName);
       formDataToSend.append("location", formData.location);
       formDataToSend.append("date", formData.date);
 
-      const response = await axios.post("https://lost-found-serve.vercel.app/register", formDataToSend);
+      console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
+
+      const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend);
       console.log(response.data);
       // Redirect or show success message
     } catch (error) {
@@ -58,15 +56,15 @@ const RegisterForm = () => {
               style={{ "margin-bottom": "30px" }}
               type="text"
               name="username"
-              placeholder="Username"
+              placeholder="Your Name"
               value={formData.username}
               onChange={handleChange}
             />
             <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
+              type="text"
+              name="contact"
+              placeholder="Contact"
+              value={formData.contact}
               onChange={handleChange}
             />
             <input

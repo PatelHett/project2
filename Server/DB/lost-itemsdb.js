@@ -6,14 +6,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
+  contact: {
     type: String,
     required: true,
     unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
   },
   image: {
     type: String, // storing the filename of the uploaded image
@@ -31,5 +27,6 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 });
-const User2 = mongoose.model("User2", userSchema);
-module.exports = User2;
+
+const itemList = mongoose.model("itemList", userSchema);
+module.exports = itemList;

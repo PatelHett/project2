@@ -2,7 +2,11 @@ const express = require('express')
 const router = express.Router()
 const userModel = require('../DB/signupDB')
 const itemModel = require('../DB/itemDB')
-const { useFormAction } = require('react-router-dom')
+const multer = require("multer");
+const path = require("path");
+('./public/uploads');
+
+
 router.get('/apide', (req, res) => {
     const data = { d: "Hello Dev maurya" }
     res.json(data)
@@ -18,6 +22,44 @@ router.get('/recent', async(req, res) => {
         console.log('error in fetching data items.')
     }
 }) 
+
+router.post('/upload', async (req, res) => {
+
+    const storage = multer.diskStorage({
+        destination: "../Client/public/uploads",
+        filename: function (req, file, cb) {
+          cb(null, file.originalname);
+        },
+      });
+      
+      const upload = multer({
+        storage: storage,
+        limits: { fileSize: 1000000 },
+      }).single("image");
+      
+      upload(req, res, async (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          const { username, contact, objectName, location, date } = req.body;
+          const newitem = new itemModel({
+            name: username,
+            contact: contact,
+            objectName: objectName,
+            location: location,
+            userSelectedDate: date,
+            uploadedImage: req.file.originalname,
+          });
+          const isSave = await newitem.save();
+          if (isSave) {
+            console.log("Saved in DB");
+          } else {
+            console.log("error in saving the data");
+          }
+        }
+      });
+    res.end();
+})
 
 router.get('/lostitem', async(req,res)=>{
     const itemdata = await itemModel.find({}).exec()
@@ -82,56 +124,6 @@ router.post('/login', async (req,res) =>{
 
 })
 
-const multer = require("multer");
-const path = require("path");
-const User2 = require("../DB/lost-itemsdb");
 
-
-// Multer setup for file upload
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/"); // Uploads directory
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname)); // Appending extension
-  },
-});
-
-const upload = multer({ storage });
-
-// POST /api/register
-// Register a new user
-router.post("/register", upload.single("image"), async (req, res) => {
-  const { username, email, /*password*/objectName, location, date} = req.body;
-  const image = req.file;
-
-  try {
-    // Check if user already exists
-    let user = await User2.findOne({ email });
-
-    if (user) {
-      return res.status(400).json({ msg: "User already exists" });
-    }
-
-    user = new User2({
-      username,
-      email,
-    //   password,
-      image: image ? image.filename : null,
-      objectName,
-      location,
-      date,
-    });
-
-    // Save user to the database
-    await user.save();
-
-    res.json({ msg: "User registered successfully" });
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).json({ error: 'Error submitting lost item details'})
-};
-
-})
 
 module.exports = router

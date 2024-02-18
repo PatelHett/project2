@@ -23,26 +23,16 @@ const Layout = ({ children }) => (
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />} />
-        </Routes>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-        </Routes>
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-        <Routes>
-          <Route path="/lost-items" element={<Addlist />} />
-        </Routes>
-        <Routes>
-          <Route path="/register" element={<Register />} />
-        </Routes>
-        <Routes>
-          <Route path="/contact" element={<ContactForm />} />
-        </Routes>
-      </BrowserRouter>
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Layout />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
+    <Route path="/lost-items" element={<Addlist />} />
+    <Route path="/register" element={<Register />} />
+    <Route path="/contact" element={<ContactForm />} />
+  </Routes>
+</BrowserRouter>
     </>
   );
 }

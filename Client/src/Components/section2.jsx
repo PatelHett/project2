@@ -23,6 +23,7 @@ export default function Section2() {
       });
   }, []);
 
+  
   return (
     <>
       <div className="section2">
@@ -32,7 +33,7 @@ export default function Section2() {
             <div key={index} className="S2box">
               <a href="/lostitems">
                 <div className="S2image">
-                  <img src={value.uploadedImage} alt={`Image ${index + 1}`} />
+                  <img src={`/uploads/${value.uploadedImage}`} onLoad={console.log(value.uploadedImage)} alt={`Image ${index + 1}`} />
                 </div>
               </a>
               <div className="details">

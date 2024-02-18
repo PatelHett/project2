@@ -77,12 +77,13 @@ function Section2() {
             <div key={index} className="S2box">
               <a href="/lostitems">
                 <div className="S2image">
-                  <img src={item.uploadedImage} alt={`Image ${index + 1}`} />
+                  <img src={`/uploads/${item.uploadedImage}`} alt={`Image ${index + 1}`} />
                 </div>
               </a>
               <div className="details">
-                <h2>Name : {item.name}</h2>
+                <h2>Name : {item.objectName}</h2>
                 <p>Location : {item.location}</p>
+                <p>Who Found?: {item.name}</p>
                 <p>
                   Date : {new Date(item.userSelectedDate).toLocaleDateString()}
                 </p>

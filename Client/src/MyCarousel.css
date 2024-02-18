@@ -57,6 +57,10 @@
 .details h2{
   font-size: 2.5vh;
 }
+.details p{
+  font-size: 2vh;
+  margin: 0;
+}
 .location{
   margin: 0;
 }

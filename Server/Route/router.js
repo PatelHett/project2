@@ -4,7 +4,6 @@ const userModel = require('../DB/signupDB')
 const itemModel = require('../DB/itemDB')
 const multer = require("multer");
 const path = require("path");
-('./public/uploads');
 
 
 router.get('/apide', (req, res) => {

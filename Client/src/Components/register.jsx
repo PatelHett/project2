@@ -12,6 +12,8 @@ const RegisterForm = () => {
     date: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     if (e.target.name === "image") {
       setFormData({ ...formData, image: e.target.files[0] });
@@ -33,10 +35,11 @@ const RegisterForm = () => {
 
       console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
 
-      const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend);
+      const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend,);
       console.log(response.data);
       // Redirect or show success message
     } catch (error) {
+      setError(error.response.data);
       console.error(error.response.data);
       // Show error message
     }
@@ -131,6 +134,7 @@ const RegisterForm = () => {
               Register
             </button>
           </form>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
         <div className="i1">
           <img

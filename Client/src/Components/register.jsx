@@ -33,14 +33,22 @@ const RegisterForm = () => {
       formDataToSend.append("location", formData.location);
       formDataToSend.append("date", formData.date);
 
-      console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
+      // console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
 
       const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend);
-      console.log(response.data);
+      // console.log(response.data);
+
+      // const responseData = await response.json();
+     
       // Redirect or show success message
+      if(!response.data.err){
+        setError('Done✅')
+        setTimeout(() => {window.location.href = response.data.redirectUrl}, 2000);
+      }else{
+        setError(response.data.err)
+      }
     } catch (error) {
-      setError(error.response.data);
-      console.error(error.response.data);
+      console.error("---->"+error);
       // Show error message
     }
   };
@@ -134,7 +142,7 @@ const RegisterForm = () => {
               Register
             </button>
           </form>
-          {error && <p style={{ color: "red" }}>{error}</p>}
+          {error && <p style={{ color: "white", backgroundColor:"red" ,fontSize:'18px',padding:'0 2px',width:'fit-content'}}>{error}</p>}
         </div>
         <div className="i1">
           <img

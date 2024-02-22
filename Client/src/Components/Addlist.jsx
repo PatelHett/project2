@@ -84,6 +84,7 @@ function Section2() {
                 <h2>Name : {item.objectName}</h2>
                 <p>Location : {item.location}</p>
                 <p>Who Found?: {item.name}</p>
+                <p>His/Her Contact: {item.contact}</p>
                 <p>
                   Date : {new Date(item.userSelectedDate).toLocaleDateString()}
                 </p>

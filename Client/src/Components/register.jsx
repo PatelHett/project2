@@ -35,7 +35,7 @@ const RegisterForm = () => {
 
       // console.log(formDataToSend.forEach((value, key) => console.log(key, value)) );
 
-      const response = await axios.post("https://lost-found-serve.vercel.app/upload", formDataToSend);
+      const response = await axios.post("https://lostfoundserver.onrender.com/upload", formDataToSend);
       // console.log(response.data);
 
       // const responseData = await response.json();

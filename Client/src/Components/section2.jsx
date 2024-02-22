@@ -5,7 +5,7 @@ export default function Section2() {
   const [items, setItems] = useState({});
 
   useEffect(() => {
-    fetch("https://lost-found-serve.vercel.app/recent")
+    fetch("https://lostfoundserver.onrender.com/recent")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -33,7 +33,7 @@ export default function Section2() {
             <div key={index} className="S2box">
               <a href="/lostitems">
                 <div className="S2image">
-                  <img src={`/uploads/${value.uploadedImage}`} onLoad={console.log(value.uploadedImage)} alt={`Image ${index + 1}`} />
+                  <img src={`https://lostfoundserver.onrender.com/uploads/${value.uploadedImage}`} onLoad={console.log(value.uploadedImage)} alt={`Image ${index + 1}`} />
                 </div>
               </a>
               <div className="details">

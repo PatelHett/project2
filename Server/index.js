@@ -17,6 +17,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.static('public'));
 
 // Body parser middleware
 app.use(bodyParser.json());
